@@ -1,0 +1,13 @@
+setup.py
+test_2.py
+Parte_1/test.py
+Parte_1/paquetes/adios/__init__.py
+Parte_1/paquetes/adios/despedida.py
+Parte_1/paquetes/hola/__init__.py
+Parte_1/paquetes/hola/saludar.py
+Parte_1/paquetes/modificar_nums/__init__.py
+Parte_1/paquetes/modificar_nums/modificar.py
+paquetes.egg-info/PKG-INFO
+paquetes.egg-info/SOURCES.txt
+paquetes.egg-info/dependency_links.txt
+paquetes.egg-info/top_level.txt

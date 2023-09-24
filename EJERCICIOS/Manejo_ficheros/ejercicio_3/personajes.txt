@@ -1,0 +1,3 @@
+{'Nombre': "Lae'zel", 'Vida': 4, 'Ataque': 2, 'Defensa': 4, 'Alcance': 2}
+{'Nombre': 'Brook', 'Vida': 2, 'Ataque': 4, 'Defensa': 2, 'Alcance': 4}
+{'Nombre': 'Looter', 'Vida': 2, 'Ataque': 4, 'Defensa': 1, 'Alcance': 8}
