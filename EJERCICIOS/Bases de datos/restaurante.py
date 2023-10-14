@@ -88,7 +88,7 @@ def postres():
 def agregar_plato():
     while True:
         opcion=int (input("""
- ¿Qué plato te gustaría?
+ ¿Qué deseas cambiar?
 [1] Primeros
 [2] Segundos
 [3] Postres
@@ -116,10 +116,36 @@ def mostrar_menu():
     conexion = sqlite3.connect("restaurante.db")
     cursor = conexion.cursor()
     
-    
-    primeros= 
-    
-    cursor.commit()
-    cursor.close()
-            
-agregar_plato()
+    while True:
+        opcion=int (input("""
+    ¿Qué platos deseas ver?
+[1] Primeros
+[2] Segundos
+[3] Postres
+[4] Salir
+                """))
+        try:
+            if opcion==1:
+                cursor.execute("SELECT * FROM plato WHERE categoria_id=3")
+                prim=cursor.fetchall()
+                print (f"Primeros platos:\n{prim}")
+            elif opcion==2:
+                cursor.execute("SELECT * FROM plato WHERE categoria_id=1")
+                segs=cursor.fetchall()
+                print (f"Segundos platos:\n{segs}")
+            elif opcion==3:
+                cursor.execute("SELECT * FROM plato WHERE categoria_id=2")
+                post=cursor.fetchall()
+                print (f"Primeros platos:\n{post}")
+            elif opcion==4:
+                print ("Cerrando el aplicativo")
+            break 
+
+        except:
+                print (f"""
+                   El valor {opcion} no es válido.
+                   Intenta nuevamente""")
+    conexion.commit()
+    conexion.close()
+
+
