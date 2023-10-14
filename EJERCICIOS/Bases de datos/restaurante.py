@@ -30,11 +30,96 @@ def agregar_categoria():
     cursor = conexion.cursor()
     try:
         new_cat_name=input("Nombre: ")
-        cursor.execute("INSERT INTO categoria VALUES(null, ?)", (new_cat_name),)
+        cursor.execute("INSERT INTO categoria VALUES(null, ?)", [new_cat_name],)
     except:
         print(f"La categoría {new_cat_name} ya existe")
     
     conexion.commit()
     conexion.close()
 
-agregar_categoria()
+def primeros():
+    conexion =sqlite3.connect("restaurante.db")
+    cursor=conexion.cursor()
+    
+    cursor.execute("SELECT * FROM plato WHERE categoria_id=1")
+    primeros_platos = cursor.fetchall()
+    print(f"Los primeros platos son: \n{primeros_platos}")
+    try:
+        nuevo_plato = input("Ingresa el nuevo plato: ")
+        cursor.execute("INSERT INTO plato VALUES(null, ?, 1)", [nuevo_plato],)
+    except:
+        print(f"El plato {nuevo_plato} ya existe")
+    
+    conexion.commit()
+    conexion.close()
+
+def segundos():
+    conexion =sqlite3.connect("restaurante.db")
+    cursor=conexion.cursor()
+    
+    cursor.execute("SELECT * FROM plato WHERE categoria_id=2")
+    segundos_platos = cursor.fetchall()
+    print(f"Los segundos platos son: \n{segundos_platos}")
+    try:
+        nuevo_plato = input("Ingresa el nuevo plato: ")
+        cursor.execute("INSERT INTO plato VALUES(null, ?, 2)", [nuevo_plato],)
+    except:
+        print(f"El plato {nuevo_plato} ya existe")
+    
+    conexion.commit()
+    conexion.close()
+    
+def postres():
+    conexion =sqlite3.connect("restaurante.db")
+    cursor=conexion.cursor()
+    
+    cursor.execute("SELECT * FROM plato WHERE categoria_id=3")
+    postre = cursor.fetchall()
+    print(f"Los postres son: \n{postre}")
+    try:
+        nuevo_plato = input("Ingresa el nuevo plato: ")
+        cursor.execute("INSERT INTO plato VALUES(null, ?, 3)", [nuevo_plato],)
+    except:
+        print(f"El plato {nuevo_plato} ya existe")
+    
+    conexion.commit()
+    conexion.close()
+
+def agregar_plato():
+    while True:
+        opcion=int (input("""
+ ¿Qué plato te gustaría?
+[1] Primeros
+[2] Segundos
+[3] Postres
+[4] Crear categoría
+[5] Salir
+                """))
+        try:
+            if opcion==1:
+                primeros()
+            elif opcion==2:
+                segundos()
+            elif opcion==3:
+                postres()
+            elif opcion==4:
+                agregar_categoria()
+            elif opcion==5:
+                print ("Cerrando el aplicativo")
+                break 
+        except:
+            print (f"""
+                   El valor {opcion} no es válido.
+                   Intenta nuevamente""")
+
+def mostrar_menu():
+    conexion = sqlite3.connect("restaurante.db")
+    cursor = conexion.cursor()
+    
+    
+    primeros= 
+    
+    cursor.commit()
+    cursor.close()
+            
+agregar_plato()

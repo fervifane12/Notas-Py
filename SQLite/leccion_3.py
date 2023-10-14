@@ -5,6 +5,7 @@ cursor = conexion.cursor()
 
 cursor.execute("SELECT * FROM usuarios WHERE id=1")
 
+
 usuario=cursor.fetchone()
 print(usuario)
 
